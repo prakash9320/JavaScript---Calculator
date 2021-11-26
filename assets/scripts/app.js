@@ -3,7 +3,7 @@ let currentResult =  defaultResult;
  let result;
 
          const getUserNumberInput = () =>{
-             return parseInt(usrInput.value)
+             return parseInt(usrInput.value);
          }
 
 
