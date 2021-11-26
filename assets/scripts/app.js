@@ -1,20 +1,21 @@
  const defaultResult = 0;
 let currentResult =  defaultResult;
  let result;
-
+           // Get Input from Input Feild
          const getUserNumberInput = () =>{
+             // ParseInt is convert to String to integer 
              return parseInt(usrInput.value);
          }
-
+          //  Generates And Write Calculation log 
           const createAndWriteOutPut = (operator,resultBeforeCalc,calcNumber)=>{
             const  calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`
-            outputResult(currentResult,calcDescription);
+            outputResult(currentResult,calcDescription); // from Vender File
           }
 
  const add = (  ) =>{
        const enteredNumber = getUserNumberInput();
        const initialResult = currentResult;
-       currentResult = currentResult + enteredNumber ;
+       currentResult +=  enteredNumber ;
         createAndWriteOutPut('+',initialResult,enteredNumber)
         
  }
@@ -22,14 +23,14 @@ let currentResult =  defaultResult;
    const subtract = () =>{ 
     const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;
-        currentResult = currentResult - enteredNumber ;
+        currentResult -=  enteredNumber ;
         createAndWriteOutPut('-',initialResult,enteredNumber);
    }
 
     const multiply = () =>{
         const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;
-        currentResult = currentResult * enteredNumber ;
+        currentResult *=  enteredNumber ;
         createAndWriteOutPut('*',initialResult,enteredNumber);
 
     }
@@ -37,7 +38,7 @@ let currentResult =  defaultResult;
     const divide = () =>{
         const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;
-        currentResult = currentResult / enteredNumber ;
+        currentResult /=  enteredNumber ;
         createAndWriteOutPut('/',initialResult,enteredNumber);
     }
     
