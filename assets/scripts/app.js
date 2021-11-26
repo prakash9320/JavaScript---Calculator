@@ -1,6 +1,8 @@
  const defaultResult = 0;
 let currentResult =  defaultResult;
  let result;
+ let logEntries = [];
+
            // Get Input from Input Feild
          const getUserNumberInput = () =>{
              // ParseInt is convert to String to integer 
@@ -16,8 +18,15 @@ let currentResult =  defaultResult;
        const enteredNumber = getUserNumberInput();
        const initialResult = currentResult;
        currentResult +=  enteredNumber ;
-        createAndWriteOutPut('+',initialResult,enteredNumber)
-        
+        createAndWriteOutPut('+',initialResult,enteredNumber);
+        const logEntry = {
+            operation :'ADD',
+            prevResult: initialResult,
+            Number :enteredNumber,
+            result: currentResult
+        }
+          logEntries.push(logEntry);
+          console.log(logEntries[0]);
  }
 
    const subtract = () =>{ 
@@ -41,7 +50,7 @@ let currentResult =  defaultResult;
         currentResult /=  enteredNumber ;
         createAndWriteOutPut('/',initialResult,enteredNumber);
     }
-    
+     // add Action Event on the button 
  addBtn.addEventListener('click',add);
  subtractBtn.addEventListener('click',subtract);
  multiplyBtn.addEventListener('click',multiply);
