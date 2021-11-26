@@ -26,6 +26,7 @@ let currentResult =  defaultResult;
             result: currentResult
         }
           logEntries.push(logEntry);
+          console.log(logEntry.operation)
           console.log(logEntries[0]);
  }
 
