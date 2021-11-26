@@ -2,7 +2,7 @@
 let currentResult =  defaultResult;
  let result;
  const add = (  ) =>{
-       const enteredNumber = parseInt(userInput.value)
+       const enteredNumber = parseInt(usrInput.value)
       const  calcDescription = `${currentResult} + ${enteredNumber}`
           currentResult = currentResult + enteredNumber ;
           outputResult(currentResult,calcDescription);
