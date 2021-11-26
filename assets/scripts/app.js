@@ -1,13 +1,11 @@
  const defaultResult = 0;
 let currentResult =  defaultResult;
-
- const add = ( num1 , num2 ) =>{
-         const result = num1 + num2;
-         return result;
+ let result;
+ const add = (  ) =>{
+          currentResult = currentResult + parseInt(userInput.value);
+          outputResult(currentResult,'');
  }
+    
+ addBtn.addEventListener('click',add);
+ 
 
- currentResult = add(1,2)
-
-
-
-outputResult(currentResult, calculationDescrip);
