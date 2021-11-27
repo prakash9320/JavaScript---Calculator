@@ -35,6 +35,15 @@ let currentResult =  defaultResult;
     const initialResult = currentResult;
         currentResult -=  enteredNumber ;
         createAndWriteOutPut('-',initialResult,enteredNumber);
+        const logEntry = {
+            operation :'SUBTRACT',
+            prevResult: initialResult,
+            Number :enteredNumber,
+            result: currentResult
+        }
+          logEntries.push(logEntry);
+          console.log(logEntry.operation)
+          console.log(logEntries[0]);
    }
 
     const multiply = () =>{
@@ -42,6 +51,15 @@ let currentResult =  defaultResult;
     const initialResult = currentResult;
         currentResult *=  enteredNumber ;
         createAndWriteOutPut('*',initialResult,enteredNumber);
+        const logEntry = {
+            operation :'MULTIPLY',
+            prevResult: initialResult,
+            Number :enteredNumber,
+            result: currentResult
+        }
+          logEntries.push(logEntry);
+          console.log(logEntry.operation)
+          console.log(logEntries[0]);
 
     }
 
@@ -50,6 +68,15 @@ let currentResult =  defaultResult;
     const initialResult = currentResult;
         currentResult /=  enteredNumber ;
         createAndWriteOutPut('/',initialResult,enteredNumber);
+        const logEntry = {
+            operation :'DIVIDE',
+            prevResult: initialResult,
+            Number :enteredNumber,
+            result: currentResult
+        }
+          logEntries.push(logEntry);
+          console.log(logEntry.operation)
+          console.log(logEntries[0]);
     }
      // add Action Event on the button 
  addBtn.addEventListener('click',add);
