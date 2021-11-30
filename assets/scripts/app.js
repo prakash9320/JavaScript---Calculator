@@ -14,20 +14,24 @@ let currentResult =  defaultResult;
             outputResult(currentResult,calcDescription); // from Vender File
           }
 
+          const writeToLog = (operationIdentifier,prevResult,operationNumber,newResult) =>{
+            const logEntry = {
+                operation :operationIdentifier,
+                prevResult: prevResult,
+                Number :operationNumber,
+                result: newResult
+            }
+              logEntries.push(logEntry);
+              console.log(logEntry.operation)
+              console.log(logEntries[0]); 
+          }
+
  const add = (  ) =>{
        const enteredNumber = getUserNumberInput();
        const initialResult = currentResult;
        currentResult +=  enteredNumber ;
         createAndWriteOutPut('+',initialResult,enteredNumber);
-        const logEntry = {
-            operation :'ADD',
-            prevResult: initialResult,
-            Number :enteredNumber,
-            result: currentResult
-        }
-          logEntries.push(logEntry);
-          console.log(logEntry.operation)
-          console.log(logEntries[0]);
+             writeToLog('ADD',initialResult,enteredNumber,currentResult);
  }
 
    const subtract = () =>{ 
@@ -35,15 +39,7 @@ let currentResult =  defaultResult;
     const initialResult = currentResult;
         currentResult -=  enteredNumber ;
         createAndWriteOutPut('-',initialResult,enteredNumber);
-        const logEntry = {
-            operation :'SUBTRACT',
-            prevResult: initialResult,
-            Number :enteredNumber,
-            result: currentResult
-        }
-          logEntries.push(logEntry);
-          console.log(logEntry.operation)
-          console.log(logEntries[0]);
+        writeToLog('SUBSTRACT',initialResult,enteredNumber,currentResult);
    }
 
     const multiply = () =>{
@@ -51,16 +47,7 @@ let currentResult =  defaultResult;
     const initialResult = currentResult;
         currentResult *=  enteredNumber ;
         createAndWriteOutPut('*',initialResult,enteredNumber);
-        const logEntry = {
-            operation :'MULTIPLY',
-            prevResult: initialResult,
-            Number :enteredNumber,
-            result: currentResult
-        }
-          logEntries.push(logEntry);
-          console.log(logEntry.operation)
-          console.log(logEntries[0]);
-
+        writeToLog('MULTIPLY',initialResult,enteredNumber,currentResult);
     }
 
     const divide = () =>{
@@ -68,19 +55,11 @@ let currentResult =  defaultResult;
     const initialResult = currentResult;
         currentResult /=  enteredNumber ;
         createAndWriteOutPut('/',initialResult,enteredNumber);
-        const logEntry = {
-            operation :'DIVIDE',
-            prevResult: initialResult,
-            Number :enteredNumber,
-            result: currentResult
-        }
-          logEntries.push(logEntry);
-          console.log(logEntry.operation)
-          console.log(logEntries[0]);
+        writeToLog('DIVIDE',initialResult,enteredNumber,currentResult);
     }
      // add Action Event on the button 
  addBtn.addEventListener('click',add);
- subtractBtn.addEventListener('click',subtract);
+ subtractBtn.addEventListener('click',subtract); 
  multiplyBtn.addEventListener('click',multiply);
  divideBtn.addEventListener('click',divide);
 
